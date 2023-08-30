@@ -50,9 +50,7 @@ function scrollFunction() {
     document.getElementById("text-box")?.classList.add('small-text-box');
     document.getElementById("heading-primary-main")?.classList.add('heading-primary-main-small');
     document.getElementById("heading-primary-sub")?.classList.add('heading-primary-sub-small');
-    
-
-  }   else /* if (window.scrollY < 20 ) */ {
+    } else {
     document.getElementById("header")?.classList.remove('small-header');
     document.getElementById("brand-box")?.classList.remove('small-brand-box');
     document.getElementById("brand")?.classList.remove('small-brand');

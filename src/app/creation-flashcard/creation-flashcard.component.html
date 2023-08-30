@@ -1,0 +1,29 @@
+<form #form="ngForm"(ngSubmit)="createFlashcard(form)">
+    <div class="full-container">
+        <div class="category">
+            <div class="form-group">
+                <input type="text" class="form-control" id="search-text" aria-describedby="search-text" 
+                  [(ngModel)]="searchText"  name= "category"  #category="ngModel" placeholder="Enter category to search or to save" 
+                  autofocus>
+            </div>
+              <ul id="list-category" class="list-group list-group-flush">
+                <!-- results of ngFor is passed to appFilter with argument searchText -->
+                <li class="list-group-item" *ngFor="let c of categories | appFilter: searchText" (click)="addTextToInput(c)">
+                  {{c.name}}
+                </li>
+              </ul>
+        </div>
+
+        <div class="flashcard">
+            <div class="recto-verso" id="recto-question">
+               <textarea class="textarea"   oninput="this.style.height = ''; this.style.height = this.scrollHeight +'px'" maxlength="400px" rows="5" class="fill" name="question" ngModel placeholder="Question" required #question="ngModel"></textarea>
+            </div>
+            <div  class="recto-verso"id="verso-answer">
+                <textarea  class="textarea"   oninput="this.style.height = ''; this.style.height = this.scrollHeight +'px'" maxlength="400px" rows="5"  class="fill" name="answer" ngModel placeholder="Answer" required #answer="ngModel" > </textarea>
+            </div>
+            <button>Save</button>
+        </div>
+        
+    </div>
+    
+</form>

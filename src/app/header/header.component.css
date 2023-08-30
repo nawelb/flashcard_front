@@ -1,0 +1,128 @@
+.header {
+    height: 500px;
+    background-image: 
+    linear-gradient(to right bottom, 
+   rgba(76, 216, 255, 0.2),
+   rgba(30, 108, 217, 0.2)),
+   url('../../assets/card1.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+
+}
+.small-header {
+    position:sticky;
+    top:-300px;
+    transition: all .2s;
+    background-image: none;
+    background-color: #737c88;
+    /* rgba(151,151,151,255) */
+    /* height: 40vh; */    
+}
+.brand-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.small-brand-box {
+    transition: all 1s;
+    top: 315px;
+    left: 20px;
+}
+
+.brand { 
+    font-size: 20px;    
+}
+
+a{
+    text-decoration: none;
+    text-transform: none;
+} 
+
+.small-brand{
+    transition: all 1s;
+    font-size: 14px; 
+}
+
+.text-box {
+    position: relative;
+    top: 41%;
+    /*left: 30%; */
+    /*transform: translate(-50%, -50%);*/
+    text-align: center;
+    transition: top 1s ease, left 1s ease;
+}
+
+.small-text-box{
+    transition: all 1s;
+/*transform: translate(-50%, -50%); */    
+    justify-items: left;
+    top: 70%;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 30px;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+
+.heading-primary-main-small {
+    font-size: 22px;
+    font-weight: 350;
+    margin-bottom: 5px;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 7.4px;
+}
+
+.heading-primary-sub-small{
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 7px;
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+  font-size: 14px;
+}
+
+

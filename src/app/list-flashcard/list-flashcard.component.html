@@ -1,0 +1,50 @@
+<div id="filter" class="filter">
+
+    <select name="categories" id="category-select"  (change)="onSelectChange($event)">
+        <option value="-1">--Filter by category:--</option>
+        <option value={{category.name}} *ngFor="let category of categories">{{category.name}}</option>
+    </select>
+</div>
+
+<div class="wrapper">   
+
+
+    <div class="card"  *ngFor="let flashcard of flashcards">
+        <input type="checkbox" id={{flashcard.id}} class="more" aria-hidden="false">
+        <div class="content inner">
+            
+            <label for={{flashcard.id}} class="button" aria-hidden="false">
+                <div class="front">
+                    <div class="inner">
+                        <h2>{{flashcard.question}}</h2>
+
+                        <!-- <label for={{flashcard.id}} class="button" aria-hidden="false">
+                            Details
+                        </label> --> 
+                    </div>
+                </div>
+            </label>
+            
+        
+            <div class="back">
+                <div class="inner">
+                    <div class="description">
+                        <p>{{flashcard.answer}}</p>
+                    </div>
+   
+                    <div class="price">{{flashcard.category.name}}</div>
+                    <label for={{flashcard.id}} class="button return" aria-hidden="false">
+                        <strong style="color: black;"> <img id="return" src="../../assets/return-svgrepo-com.svg" alt=""> </strong> 
+                    </label>
+                    <div class="delete"> 
+                        <button type="submit" (click)= "deleteFlashcard(flashcard.id)" >
+                            <img class="delete" src="../../assets/bin_484662.png" alt="">
+                        </button>  
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+</div>

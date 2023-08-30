@@ -1,0 +1,252 @@
+.wrapper {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.card {
+	width: 30%;
+	height: 340px;
+	margin: 1em;
+	perspective: 1500px;
+	.content {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		transform-style: preserve-3d;
+		transition: transform 0.8s cubic-bezier(0.75, 0, 0.85, 1);
+	}
+}
+
+.more {
+	display: none;
+
+	&:checked ~ .content {
+		transform: rotateY(180deg);
+	}
+}
+
+.front,
+.back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+ 	backface-visibility:  hidden ;
+ 	transform-style: preserve-3d;
+	border-radius: 20px;
+
+	.inner {
+		
+		display: grid;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width:100% ;
+		transform: translateZ(80px) scale(0.94);
+	}
+}
+
+.front {
+	background-color: #fff;
+	background-size: cover;
+	background-position: center center;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		border-radius: 20px;
+		backface-visibility: hidden;
+		background: linear-gradient(
+			40deg,
+			rgba(67, 138, 243, 0.7),
+			rgba(255, 242, 166, 0.7)
+		);
+	}
+	.inner {
+		grid-template-rows: 9fr 1fr;
+		justify-items: center;
+	}
+
+	h2 {
+		grid-row: 2;
+		margin-bottom: 0.3em;
+		letter-spacing: 3px;
+		color: #fff;
+		font-weight: 500;
+		text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.back {
+	transform: rotateY(180deg);
+	background-color: #fff;
+	border: 2px solid rgb(240, 240, 240);
+	.inner {
+		grid-template-rows: 1fr 9fr 1fr;
+        height: 100%;
+        width: 100%;
+	}
+
+
+	.description {
+		grid-row:2;
+		font-size: 18px;
+		border-radius: 5px;
+		font-weight: 600;
+		line-height: 1.4em;
+		overflow: auto;
+		
+	}
+
+	
+	.price {
+		font-weight: 600;
+		grid-row: 1;
+		font-size: 0.86em;
+	}
+
+	
+
+	.price {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+		justify-self: right;
+        padding: 10px 20px;
+	}
+
+	.button {
+		justify-self: center;
+        vertical-align: center;
+/*         border: solid black;
+ */	}
+}
+
+.button {
+	grid-row: 3;
+/* 	letter-spacing: 1px;
+ */	font-weight: 600;
+	cursor: pointer;
+	display: block;
+/* 	padding: 0 1.5em;
+ */	height: 2em;
+	line-height: 2.9em;
+	min-width: 2em;
+/* 	background-color: transparent;
+ */	/* border: solid 2px #fff; */
+	color: #fff;
+	border-radius: 4px;
+	text-align: center;
+	left: 50%;
+	backface-visibility: hidden;
+	transition: 0.3s ease-in-out;
+	text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+
+	/* &:hover {
+		background-color: #fff;
+		box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+		text-shadow: none;
+	} */
+
+	&.return {
+		/* line-height: 3em; */
+		text-shadow: none;
+		&:hover {
+			color: #ffffff;
+			box-shadow: none;
+		}
+	}
+}
+.delete{
+	grid-row: 1;
+	justify-content: left;
+	width: 25px;
+    height: 25px;
+	position: absolute;
+	left: 15px;
+	top: 6px;
+	cursor: pointer;
+	
+}
+button{
+	border:none;
+	background-color: white;
+}
+::-webkit-scrollbar {
+	width: 5px;
+}
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+/* ::-webkit-scrollbar-thumb {
+	background: lighten(accent-color, 20%);
+}
+::-webkit-scrollbar-thumb:hover {
+	background: accent-color;
+} */
+
+#return{
+    width: 30px;
+    height: 30px;
+}
+
+.filter{
+    
+    display: flex;
+    justify-content: right;
+    background-color:white;
+    opacity: 0.7;
+    margin-right: 40px;
+    padding: 40px;
+}
+.small-filter{
+    position: sticky;
+    z-index: 1;
+    top: 77px;
+}
+
+select{
+    appearance: none;
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    width: 15em;
+    height: 3em;
+    padding: 0 4em 0 1em;
+    border: 0.25px;
+}
+
+@media (min-width: 1200px) {
+	/* Vos règles CSS pour cette plage de largeurs d'écran */
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+	/* Vos règles CSS pour cette plage de largeurs d'écran */
+	
+	h2{
+		font-size: 20px;
+	}	
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+/* Vos règles CSS pour cette plage de largeurs d'écran */
+	
+	h2{
+		font-size: 16px;
+	}	
+}
+
+@media (max-width: 479px) {
+	/* Vos règles CSS pour cette plage de largeurs d'écran */
+	
+	h2{
+		font-size: 12px;
+	}
+}
+
+

@@ -31,7 +31,9 @@
 .back {
 	
 	border-radius: 10px; /* Coins arrondis */
-	background-image: linear-gradient(to right, rgb(151, 33, 0), blue); /* Dégradé de couleur comme fond */
+	
+	/*background-image: linear-gradient(to right, rgb(151, 33, 0), blue); /* Dégradé de couleur comme fond */
+ 	
 	border: 1px solid transparent; /* Bordure transparente pour garder l'espacement */
   
 	
@@ -46,7 +48,6 @@
 	border-radius: 20px;
 
 	.inner {
-		
 		display: grid;
         justify-content: center;
         align-items: center;
@@ -57,10 +58,13 @@
 }
 
 .front {
-
+	font-family: 'Montserrat', sans-serif;
+	font-weight: lighter;
 	background-color: #fff;
 	background-size: cover;
 	background-position: center center;
+	background: linear-gradient(to right, rgb(151, 33, 0), blue); /* Dégradé de couleur comme fond */
+
 	&:after {
 		content: '';
 		position: absolute;
@@ -71,33 +75,49 @@
 		display: block;
 		border-radius: 20px;
 		backface-visibility: hidden;
-		background: linear-gradient(
+/* 		background-image: linear-gradient(to right, rgb(151, 33, 0), blue); /* Dégradé de couleur comme fond */
+		background-image: linear-gradient(
 			40deg,
 			rgba(67, 138, 243, 0.7),
 			rgba(255, 242, 166, 0.7)
 		);
+
 	}
 	.inner {
 		grid-template-rows: 9fr 1fr;
 		justify-items: center;
+		font-weight:  normal !important;
+		color: white;
+		letter-spacing: 0.1em;
+
 	}
 
 	h2 {
 		grid-row: 2;
 		margin-bottom: 0.3em;
-		letter-spacing: 3px;
-		color: #fff;
-		font-weight: 500;
-		text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-	}
+		/* color: #fff; */
+/* 		text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+ */	}
 }
 
 .back {
 	transform: rotateY(180deg);
-	background-color: #fff;
+	/* background-color: #fff; */
 	border: 2px solid rgb(240, 240, 240);
+
+/*  	background: linear-gradient(162deg, rgba(169,149,141,1) 0%, rgba(102,127,222,1) 100%);
+ */ 
+  	background-image: linear-gradient(to right, rgb(151, 33, 0), blue); /* Dégradé de couleur comme fond */
+  	
 	.inner {
+
+		 background: linear-gradient(
+		40deg,
+		rgba(67, 138, 243, 0.7),
+		rgba(255, 242, 166, 0.7)
+	); 
 		grid-template-rows: 1fr 9fr 1fr;
+		border-radius: 20px;
         height: 100%;
         width: 100%;
 	}
@@ -106,8 +126,9 @@
 	.description {
 		grid-row:2;
 		font-size: 18px;
+		font-family: 'Montserrat', sans-serif;
 		border-radius: 5px;
-		font-weight: 600;
+		font-weight: 500;
 		line-height: 1.4em;
 		overflow: auto;
 		
@@ -127,6 +148,7 @@
         right: 10px;
         top: 10px;
 		justify-self: right;
+		letter-spacing: 0.15em;
         padding: 10px 20px;
 	}
 
@@ -137,18 +159,17 @@
  */	}
 }
 
+button{
+	all: unset;
+}
 .button {
 	grid-row: 3;
-/* 	letter-spacing: 1px;
- */	font-weight: 600;
+	font-weight: 600;
 	cursor: pointer;
 	display: block;
-/* 	padding: 0 1.5em;
- */	height: 2em;
+	height: 2em;
 	line-height: 2.9em;
 	min-width: 2em;
-/* 	background-color: transparent;
- */	/* border: solid 2px #fff; */
 	color: #fff;
 	border-radius: 4px;
 	text-align: center;
@@ -157,11 +178,6 @@
 	transition: 0.3s ease-in-out;
 	text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 
-	/* &:hover {
-		background-color: #fff;
-		box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-		text-shadow: none;
-	} */
 
 	&.return {
 		/* line-height: 3em; */
@@ -193,12 +209,7 @@ button{
 ::-webkit-scrollbar-track {
 	background: #f1f1f1;
 }
-/* ::-webkit-scrollbar-thumb {
-	background: lighten(accent-color, 20%);
-}
-::-webkit-scrollbar-thumb:hover {
-	background: accent-color;
-} */
+
 
 #return{
     width: 30px;
@@ -211,7 +222,7 @@ button{
     justify-content: right;
     background-color:white;
     opacity: 0.7;
-    margin-right: 40px;
+    padding-right: 40px;
     padding: 40px;
 }
 .small-filter{
@@ -228,6 +239,10 @@ select{
     height: 3em;
     padding: 0 4em 0 1em;
     border: 0.25px;
+}
+h2{
+	font-weight: normal;
+
 }
 
 @media (min-width: 1200px) {

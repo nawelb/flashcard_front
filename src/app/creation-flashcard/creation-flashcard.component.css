@@ -8,6 +8,10 @@
     width: 80%;
 }
 
+::placeholder { 
+  color:white;
+}
+
 .category{
     width: 30%;
 }
@@ -39,6 +43,7 @@ textarea{
   height: auto;
   
   outline: none;
+  background:transparent;
 }
 .flashcard{
     display: flex;
@@ -57,11 +62,14 @@ textarea{
     border-radius: 20px;
     padding:6px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    background: rgb(242,242,242);
+	background: linear-gradient(162deg, rgba(242,242,242,1) 0%, rgba(143,142,142,1) 46%);
+
 }
 .fill{
     display: block;
     text-align: center;
-
+    background: transparent;
     width: 100%;
     overflow: hidden;
     resize: both;
